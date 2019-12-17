@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const bcyrpt = require('bcrypt');
 const pg = require('pg');
@@ -34,7 +35,6 @@ router.post('/signup', (request, response, next) => {
 // signin
 router.post('/signin', authenticateUser.authenticateUser);
 
-
 //------------ Functions ----------------//
 
 // hashing password for each user
@@ -48,17 +48,17 @@ function hashingPassword(password){
 
 // creates a new user and saves that to the DB
 function createUser(user){
-  user.token = createUserToken(user);
+  // user.token = createUserToken(user);
+  console.log(user);
   return client.query(`INSERT INTO users (
     username,
     email,
-    password,
-    token
+    password
   ) VALUES (
-    $1, $2, $3, $4);`
-    [
-      user.username, user.email, user.password, user.token
-    ]);
+    $1, $2, $3);`,
+  [
+    user.username, user.email, user.password,
+  ]);
 }
 
 // fetches a user from the DB based on username
