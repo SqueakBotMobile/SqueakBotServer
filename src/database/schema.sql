@@ -35,21 +35,21 @@ INSERT INTO challenges (challenges, data_type, hint) VALUES (
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function called pretty Print that uses a while loop to print every value in a linked list',
   'linked list',
-  ''
+  'there should be a temporary varaible that is used for pointing'
 );
 
 -- 3
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function called to Array, it takes in a list, that creates an array of the values of a linked list',
   'linked list',
-  ''
+  'there is a simple way to do this or a way to use traversal to do this'
 );
 
 -- 4
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function called contains, it takes in a list and value, that returns the first node in a linked list that contains a value or null if not found',
   'linked list',
-  ''
+  'check to see if there is a value in the head'
 );
 
 -- 5
@@ -77,28 +77,28 @@ INSERT INTO challenges (challenges, data_type, hint) VALUES (
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function called dedupe, it takes in a linked list, that will remove consective duplicate values of a linked list using a stack',
   'stack/queue',
-  ''
+  'there is going to be a traversal, comparison and storage'
 );
 
 -- 9
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'use queues to call a list of async, error and data, node functions one after the other',
   'stack/queue',
-  ''
+  'two stacks are going to need to be used and there are two ways to go about using those two stacks'
 );
 
 -- 10
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that determines if a string has matching braces using a stack',
   'stack/queue',
-  ''
+  'traversal is going to need to be used, and the push/pop methods are also going to need to be used'
 );
 
 -- 11
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a rotate function that uses a stack to rotate a queue to rotate an array n times',
   'stack/queue',
-  ''
+  'multiple stacks will need to be used for this to work'
 );
 
 -- 12
@@ -119,49 +119,49 @@ INSERT INTO challenges (challenges, data_type, hint) VALUES (
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that uses a while loop to pretty Print a trees value',
   'tree',
-  ''
+  'using a stack with push/pop methods may be of use for this problem'
 );
 
 -- 15
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that uses recursion to pretty Print a trees value',
   'tree',
-  ''
+  'need to check to see if the current node is a leaf node or not'
 );
 
 -- 16
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
-  'write a function called get Leaf Count that computes the number of leaves in a tree',
+  'write a function called getLeaf Count that computes the number of leaves in a tree',
   'tree',
-  ''
+  'check to see if there is any null values to start, recursion is going to need to be used to do this'
 );
 
 -- 17
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
-  'write a function called get Edge that computes the number of edges in a tree',
+  'write a function called getEdge that computes the number of edges in a tree',
   'tree',
-  ''
+  'you can use depth first search or breadth first search to do this'
 );
 
 -- 18
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that determines the max child count of a node in the tree',
   'tree',
-  ''
+  'either breadth first traversal or depth first traversal can be implemented to find the solution'
 );
 
 -- 19
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'remove nth child from a tree, return true or false on success',
   'tree',
-  ''
+  'recursion should be used to do this'
 );
 
 -- 20
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will find a value in a binary search tree',
   'binary search tree',
-  ''
+  'this can be solved either using recursion or iterativly'
 );
 
 -- 21
@@ -189,21 +189,21 @@ INSERT INTO challenges (challenges, data_type, hint) VALUES (
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will union two binary search trees',
   'binary search tree',
-  ''
+  'do inorder traversal of first tree and store the traversal in one temp array arr1[ ], do inorder traversal of second tree and store the traversal in another temp array arr2[ ], the arrays created in step 1 and 2 are sorted arrays. Merge the two sorted arrays into one array, construct a balanced tree from the merged array'
 );
 
 -- 25
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will intersect two binary search trees',
   'binary search tree',
-  ''
+  'do inorder traversal of first tree and store the traversal in an auxiliary array ar1[ ], do inorder traversal of second tree and store the traversal in an auxiliary array ar2[ ], find intersection of ar1[ ] and ar2[ ].'
 );
 
 -- 26
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will validate a binary search tree',
   'binary search tree',
-  ''
+  'the challenge could be implemented as a recursion, one compares the node value with its upper and lower limits if they are available, then one repeats the same step recursively for left and right subtrees'
 );
 
 -- 27
@@ -217,35 +217,35 @@ INSERT INTO challenges (challenges, data_type, hint) VALUES (
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will hash a string into a number with a size limit',
   'hash table',
-  ''
+  'in order to create a unique hash from a specific string, it can be implemented using their own string to hash converting function. It will return the hash equivalent of a string'
 );
 
 -- 29
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that finds the first duplicate letter in a string (using a hashmap)',
   'hash table',
-  ''
+  'create an empty hash, scan each character of input string and insert values to each keys in the hash, when any character appears more than once, hash key value is increment by 1, and return the character'
 );
 
 -- 30
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a histogram function that prints the count of each letter in a string',
   'hash table',
-  ''
+  'simply iterate through the string and form a key in the dictionary of newly occurred element or if element is already occurred, increase its value by 1'
 );
 
 -- 31
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that will union two hash tables',
   'hash table',
-  ''
+  'overwrite key-value pairs in the first if the same key exists in the second'
 );
 
 -- 32
 INSERT INTO challenges (challenges, data_type, hint) VALUES (
   'write a function that implements a hashtable using a linked list',
   'hash table',
-  ''
+  'you need to assign values to each node in the linked list'
 );
 
 -- Inserting tests into the test table here
