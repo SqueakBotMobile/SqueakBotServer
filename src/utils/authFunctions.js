@@ -58,21 +58,19 @@ async function createUserToken(user){
 }
 
 // looks for an email that user types in 
-async function lookForEmail(userCreds){
-  console.log(userCreds);
-  const sqlResults = await client.query(`SELECT * FROM users WHERE email=$1;`, [userCreds.email]);
+async function lookForEmail(email){
+  console.log(email);
+  const sqlResults = await client.query(`SELECT * FROM users WHERE email=$1;`, [email]);
   if (sqlResults.rowCount > 0) {
-    // return Promise.reject({error: 'This email is in use'})
-    return console.log('User email already used');
+    return Promise.reject({error: 'This email is in use'})
   };
-  console.log(sqlResults);
 }
 
 // looks for an username that user types in
-async function lookForUsername(userCreds){
-  const sqlResults = await client.query(`SELECT * FROM users WHERE username=$1;`, [userCreds.username]);
+async function lookForUsername(username){
+  const sqlResults = await client.query(`SELECT * FROM users WHERE username=$1;`, [username]);
   if (sqlResults.rowCount > 0) {
-    return {error: 'This username is in use'};
+    return Promise.reject({error: 'This username is in use'});
   };
 }
 

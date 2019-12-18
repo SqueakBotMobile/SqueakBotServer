@@ -17,17 +17,8 @@ const router = express.Router();
 // signup
 router.post('/signup', (request, response, next) => {
   lookForEmail(request.body.email)
-  .then(e =>  {
-    if(e) {
-      // feedback to user handleErrors()
-    } else {
-      lookForUsername(request.body.username)
-    }
-  })
-  .then(e => {
-    if (e) {
-      // feedback to user handleUser
-    }
+  .then(() => lookForUsername(request.body.username))
+  .then(() => {
     hashingPassword(request.body.password)
     .then(password => {
       request.body.password = password;
@@ -36,9 +27,9 @@ router.post('/signup', (request, response, next) => {
           const token = createUserToken(request.body);
           response.send(token)
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
     });
-  });
+  }).catch(e => response.send(e));
 });
 
 // signin
