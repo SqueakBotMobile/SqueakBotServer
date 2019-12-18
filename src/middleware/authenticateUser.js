@@ -1,5 +1,7 @@
 'use strict';
 
+const authenticate = require('../utils/authFunctions').authenicate;
+
 async function authenticateUser(request, response, next){
   // decide which authentication method
   let token = null;
@@ -8,7 +10,8 @@ async function authenticateUser(request, response, next){
   // exchanging strings for token
   case 'basic':
     token = await authenticateBasic(authString);
-    response.send(token);
+    request.token = token
+    next();
     break;
   //exchanging token for data
   case 'bearer':
@@ -27,6 +30,7 @@ function authenticateBasic(string){
   let bufferString = base64Buffer.toString();
   let [username, password] = bufferString.split(':');
   let authorize = {username, password};
+  console.log(authorize);
   // query a user using the username then validate that user with their password
   return authenticate(authorize);
 }
