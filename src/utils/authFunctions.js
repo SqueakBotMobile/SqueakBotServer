@@ -40,11 +40,15 @@ async function authenicate(userCreds){
   let SQL = `SELECT * FROM users WHERE username = $1;`
   const results = await client.query(SQL, [userCreds.username]);
   const user = results.rows[0];
-  const isValid = await bcrypt.compare(userCreds.password, user.password);
-  if(isValid){
-    return createUserToken(user);
+  if (user) {
+    const isValid = await bcrypt.compare(userCreds.password, user.password);
+    if(isValid){
+      return createUserToken(user);
+    } else {
+      console.error(err => 'You have an error');
+    }
   } else {
-    console.error(err => 'You have an error');
+    throw Error(`User ${userCreds.username} does not appear to exist`)
   }
 }
 
