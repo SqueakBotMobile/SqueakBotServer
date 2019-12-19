@@ -33,7 +33,9 @@ router.post('/signup', (request, response, next) => {
 });
 
 // signin
-router.post('/signin', authenticateUser.authenticateUser);
+router.post('/signin', authenticateUser.authenticateUser, (req, res, next) => {
+  res.send(req.token);
+});
 
 
 module.exports = router;
