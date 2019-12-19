@@ -46,6 +46,7 @@ async function authenicate(userCreds){
       return createUserToken(user);
     } else {
       console.error(err => 'You have an error');
+      return 'This user does not exist. Please press sign up';
     }
   } else {
     throw Error(`User ${userCreds.username} does not appear to exist`)
