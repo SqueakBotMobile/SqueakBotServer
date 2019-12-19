@@ -31,6 +31,7 @@ router.get('/inputoutput/:id', authenticateUser, getTheTestsforChallenge);
 
 // query all the questions from the database
 function getAllChallenges(request, response){
+  console.log('here');
   client.query(`SELECT challenges FROM challenges;`)
     .then(questionResults => {
       console.log(questionResults);

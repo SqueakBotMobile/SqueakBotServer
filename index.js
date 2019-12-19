@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
@@ -15,6 +16,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(authRoute);
 app.use(challengeRoutes);  
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Listening on port 3000');
 });
