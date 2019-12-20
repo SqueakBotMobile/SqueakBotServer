@@ -26,10 +26,8 @@
     "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.2",
+    "morgan": "^1.9.1",
     "pg": "^7.14.0",
     "supertest": "^4.0.2"
-  },
-  "devDependencies": {
-    "morgan": "^1.9.1"
   }
 }
