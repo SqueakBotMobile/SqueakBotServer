@@ -1,4 +1,5 @@
 'use strict';
+
 const jwt = require('jsonwebtoken');
 const pg = require('pg');
 const authenticate = require('../utils/authFunctions').authenicate;
