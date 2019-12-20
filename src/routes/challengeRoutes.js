@@ -44,7 +44,6 @@ function getOneChallenge(request, response){
   console.log(id)
   client.query(`SELECT challenges FROM challenges WHERE id=$1;`, [id])
     .then(queryResults => {
-      console.log(queryResults);
       response.send(JSON.stringify(Object.values(queryResults.rows[0])));
     })
     .catch(error => response.send(error))
