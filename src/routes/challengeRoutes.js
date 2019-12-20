@@ -34,7 +34,6 @@ function getAllChallenges(request, response){
   console.log('here');
   client.query(`SELECT challenges FROM challenges;`)
     .then(questionResults => {
-      console.log(questionResults);
       response.send(JSON.stringify(Object.values(questionResults.rows)));
     });
 }

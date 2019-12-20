@@ -37,21 +37,18 @@ describe('testing the server', () => {
   });
 
   it('has a working challenges route', async (done) => {
-    console.log(token);
     const response = await request.get('/questions/challenges').set(`Authorization`, `Bearer ${token}`);
     expect(response.body.length).toBeTruthy;
     done();
   });
 
   it('has a working routes by id', async (done) => {
-    console.log(token);
     const response = await request.get('/questions/challenges/:id').set(`Authorization`, `Bearer ${token}`);
     expect(response.body.length).toBeTruthy;
     done();
   });
 
   it('has a working routes by hint', async (done) => {
-    console.log(token);
     const response = await request.get('/questions/challenges/hint').set(`Authorization`, `Bearer ${token}`);
     expect(response.body.length).toBeTruthy;
     done();
