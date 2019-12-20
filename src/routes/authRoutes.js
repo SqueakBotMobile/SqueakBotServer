@@ -16,6 +16,7 @@ const router = express.Router();
 
 // signup
 router.post('/signup', (request, response, next) => {
+  console.log(request.body);
   lookForEmail(request.body.email)
   .then(() => lookForUsername(request.body.username))
   .then(() => {

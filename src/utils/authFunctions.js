@@ -14,6 +14,7 @@ client.connect();
 
 // hashing password for each user
 function hashingPassword(password){
+  console.log(password);
   return new Promise((resolve, reject) => {
     bcrypt.hash(password, 10, (error, hash) => {
       error ? reject(error) : resolve(hash)
