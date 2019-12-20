@@ -1,6 +1,13 @@
 'use strict';
-
+const jwt = require('jsonwebtoken');
+const pg = require('pg');
 const authenticate = require('../utils/authFunctions').authenicate;
+const createUserToken = require('../utils/authFunctions').createUserToken;
+
+const client = new pg.Client(process.env.DATABASE_URL);
+client.on('error', err => console.log(err));
+client.on('end', () => console.log('ended'));
+client.connect();
 
 async function authenticateUser(request, response, next){
   // decide which authentication method
