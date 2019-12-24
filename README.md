@@ -6,7 +6,7 @@
 - Adrian Huebner
 - David Zheng 
 
-## User Stories (link):
+## User Stories:
 1.	As a developer of this app, I want to create a mobile version of it, so that the users can practice code challenges in different locations.
 2.	As a developer of this app, I want to incorporate authentication into this app, so the user has a safe path to access the content.
 3.	As a user of this app, I want to have a timer option, so I know how much time I have left to complete the challenge.
