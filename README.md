@@ -7,7 +7,11 @@
 - David Zheng 
 
 ## User Stories (link):
-> https://docs.google.com/document/d/1V3vHAAr9Et7yx5gxecP3NDVkbyr2nbVjuzlS6bW9Q0Y/edit?usp=sharing
+1.	As a developer of this app, I want to create a mobile version of it, so that the users can practice code challenges in different locations.
+2.	As a developer of this app, I want to incorporate authentication into this app, so the user has a safe path to access the content.
+3.	As a user of this app, I want to have a timer option, so I know how much time I have left to complete the challenge.
+4.	As a user of this app, I want to have a hint option, so I can get some assist in solving the question.
+5.	As a user of this app, I want to be able to leave comments/see comments, so I can see how other people have solved the problem. 
 
 ## About SqueakBotMobile:
 This is a mobile app using React Native that helps the user practice whiteboard questions. 
